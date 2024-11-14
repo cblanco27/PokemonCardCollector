@@ -1,0 +1,484 @@
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-14 02:50:12.709064', '2024-11-14 02:50:12.709067') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20241114024115)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241114024115') RETURNING "version"[0m
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20241114025000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-14 02:51:16.413648', '2024-11-14 02:51:16.413651') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20241114024115)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241114024115') RETURNING "version"[0m
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20241114025000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime(6)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime(6)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241114025000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2024-11-14 02:52:36 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.1.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 376)
+Completed 200 OK in 175ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 8995)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 02:53:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 1533)
+  Rendered layout layouts/application.html.erb (Duration: 1165.6ms | Allocations: 95706)
+Completed 200 OK in 1255ms (Views: 1141.0ms | ActiveRecord: 30.9ms | Allocations: 99349)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2024-11-14 02:54:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 62.0ms | Allocations: 5225)
+  Rendered users/new.html.erb within layouts/application (Duration: 68.9ms | Allocations: 5546)
+  Rendered layout layouts/application.html.erb (Duration: 77.8ms | Allocations: 6657)
+Completed 200 OK in 108ms (Views: 81.2ms | ActiveRecord: 0.4ms | Allocations: 15413)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-14 02:54:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000ffff7f0b4d00>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu"}, "commit"=>"Create User", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cwhite72@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 655)
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 527)
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 30.7ms | Allocations: 3820)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 4971)
+Completed 422 Unprocessable Content in 85ms (Views: 43.4ms | ActiveRecord: 2.2ms | Allocations: 15042)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-14 02:54:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 1706)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 2793)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 3815)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 02:54:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 617)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 1722)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.1ms | Allocations: 1984)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2024-11-14 02:54:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 970)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1049)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 2153)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 2422)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 02:56:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 32.3ms | Allocations: 2773)
+  Rendered layout layouts/application.html.erb (Duration: 219.8ms | Allocations: 34573)
+Completed 200 OK in 276ms (Views: 208.2ms | ActiveRecord: 24.1ms | Allocations: 40167)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2024-11-14 02:56:46 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 12.0ms | Allocations: 2182)
+  Rendered users/new.html.erb within layouts/application (Duration: 17.0ms | Allocations: 2499)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 3603)
+Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 1.7ms | Allocations: 12143)
+
+
+Started GET "/users" for 192.168.65.1 at 2024-11-14 02:56:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 1738)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 2.0ms | Allocations: 1999)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 02:58:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 26.2ms | Allocations: 1237)
+  Rendered layout layouts/application.html.erb (Duration: 69.8ms | Allocations: 15304)
+Completed 200 OK in 83ms (Views: 48.7ms | ActiveRecord: 31.7ms | Allocations: 16461)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2024-11-14 02:58:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.8ms | Allocations: 1373)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1651)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 2762)
+Completed 200 OK in 32ms (Views: 24.2ms | ActiveRecord: 0.4ms | Allocations: 7150)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 02:59:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 2764)
+  Rendered layout layouts/application.html.erb (Duration: 240.4ms | Allocations: 34582)
+Completed 200 OK in 307ms (Views: 227.5ms | ActiveRecord: 24.4ms | Allocations: 40176)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2024-11-14 02:59:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 14.4ms | Allocations: 2188)
+  Rendered users/new.html.erb within layouts/application (Duration: 21.2ms | Allocations: 2505)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 3609)
+Completed 200 OK in 54ms (Views: 36.4ms | ActiveRecord: 1.1ms | Allocations: 12149)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 03:00:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 24.5ms | Allocations: 1234)
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 15221)
+Completed 200 OK in 89ms (Views: 56.6ms | ActiveRecord: 28.7ms | Allocations: 16376)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-14 03:00:46 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 219)
+  Rendered users/shared/_links.html.erb (Duration: 2.3ms | Allocations: 527)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 2719)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 3895)
+Completed 200 OK in 45ms (Views: 39.8ms | ActiveRecord: 0.3ms | Allocations: 9422)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 03:02:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 69.0ms | Allocations: 15147)
+Completed 200 OK in 76ms (Views: 44.5ms | ActiveRecord: 29.2ms | Allocations: 16308)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-14 03:02:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 213)
+  Rendered users/shared/_links.html.erb (Duration: 2.9ms | Allocations: 507)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 2541)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 3712)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 0.3ms | Allocations: 9079)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-14 03:02:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Users::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000ffffa7fcd210>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"users/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cwhite72@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 444)
+  Rendered users/shared/_links.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2130)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3230)
+Completed 422 Unprocessable Content in 302ms (Views: 16.7ms | ActiveRecord: 2.5ms | Allocations: 12436)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-14 03:02:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Users::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000ffffa7ec0e80>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"users/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (8.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cwhite72@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", nil], ["last_name", nil], ["created_at", "2024-11-14 03:02:49.051305"], ["updated_at", "2024-11-14 03:02:49.051305"], ["email", "cwhite72@msudenver.edu"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 275ms (ActiveRecord: 24.9ms | Allocations: 7163)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 03:02:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.6ms | Allocations: 206)
+  Rendered users/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 3354)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 4474)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.3ms | Allocations: 4777)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-14 03:02:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 1813)
+Completed 200 OK in 34ms (Views: 19.8ms | ActiveRecord: 0.2ms | Allocations: 3234)
+
+
+Started GET "/users" for 192.168.65.1 at 2024-11-14 03:05:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.7ms | Allocations: 200)
+  Rendered users/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 5767)
+  Rendered layout layouts/application.html.erb (Duration: 76.1ms | Allocations: 19818)
+Completed 200 OK in 84ms (Views: 49.3ms | ActiveRecord: 31.9ms | Allocations: 20975)
+
+
+Started GET "/users/1/edit" for 192.168.65.1 at 2024-11-14 03:05:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 1412)
+  Rendered users/edit.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1731)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 2831)
+Completed 200 OK in 38ms (Views: 25.3ms | ActiveRecord: 0.1ms | Allocations: 4140)
+
+
+Started PATCH "/users/1" for 192.168.65.1 at 2024-11-14 03:05:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"chase", "last_name"=>"white", "email"=>"cwhite72@msudenver.edu"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:40:in `block in update'
+  [1m[36mUser Update (5.1ms)[0m  [1m[33mUPDATE "users" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["first_name", "chase"], ["last_name", "white"], ["updated_at", "2024-11-14 03:05:33.025703"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 35ms (ActiveRecord: 12.5ms | Allocations: 2942)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-14 03:05:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 739)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 1839)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 0.1ms | Allocations: 2561)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCards (20241114030825)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "cards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "card_name" varchar, "card_type" varchar, "card_image" varchar, "set" varchar, "card_price" float, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_8ef7749967"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_cards_on_user_id" ON "cards" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241114030825') RETURNING "version"[0m
+  [1m[36mTRANSACTION (16.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2024-11-14 03:09:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.6ms | Allocations: 247)
+  Rendered users/index.html.erb within layouts/application (Duration: 45.5ms | Allocations: 11244)
+  Rendered layout layouts/application.html.erb (Duration: 192.3ms | Allocations: 43060)
+Completed 200 OK in 236ms (Views: 179.5ms | ActiveRecord: 24.2ms | Allocations: 48645)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 03:10:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered users/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 772)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 1877)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.2ms | Allocations: 2141)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-14 03:10:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 770)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 1875)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.1ms | Allocations: 2138)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-14 03:10:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 714)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 1814)
+Completed 200 OK in 45ms (Views: 22.6ms | ActiveRecord: 0.2ms | Allocations: 4445)
+
+
+Started GET "/users" for 192.168.65.1 at 2024-11-14 03:10:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 761)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 1866)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.1ms | Allocations: 2127)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-14 03:10:19 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 2090)
+Completed 200 OK in 45ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 4148)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-14 03:10:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 8.2ms | Allocations: 2894)
+  Rendered cards/new.html.erb within layouts/application (Duration: 15.2ms | Allocations: 3180)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 4284)
+Completed 200 OK in 44ms (Views: 31.1ms | ActiveRecord: 0.3ms | Allocations: 10398)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-14 03:10:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"charizard", "card_type"=>"", "card_image"=>"", "set"=>"", "card_price"=>"", "user_id"=>""}, "commit"=>"Create Card"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 1.7ms | Allocations: 1648)
+  Rendered cards/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 2827)
+Completed 422 Unprocessable Content in 52ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 6902)
+
+

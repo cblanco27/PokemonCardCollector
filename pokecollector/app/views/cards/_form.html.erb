@@ -1,0 +1,47 @@
+<%= form_with(model: card) do |form| %>
+  <% if card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+        <% card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :card_name, style: "display: block" %>
+    <%= form.text_field :card_name %>
+  </div>
+
+  <div>
+    <%= form.label :card_type, style: "display: block" %>
+    <%= form.text_field :card_type %>
+  </div>
+
+  <div>
+    <%= form.label :card_image, style: "display: block" %>
+    <%= form.text_field :card_image %>
+  </div>
+
+  <div>
+    <%= form.label :set, style: "display: block" %>
+    <%= form.text_field :set %>
+  </div>
+
+  <div>
+    <%= form.label :card_price, style: "display: block" %>
+    <%= form.text_field :card_price %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
