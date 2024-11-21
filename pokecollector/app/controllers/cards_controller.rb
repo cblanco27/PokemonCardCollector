@@ -57,6 +57,16 @@ class CardsController < ApplicationController
     end
   end
 
+  def search
+    @cards = Card.all
+
+    # `LIKE` is a case insensitve search operator. allows for 'pikachu', 'PIKACHU', and 'pIkAcHu' to all find the same card in the DB of 'Pikachu'
+    # `%#{params[:x]}%` allow for partial string matching. if params[:card_name] == 'pika', the query would pull every card that contained 'Pika' in it
+    @cards = @cards.where('card_name LIKE ?', "%#{params[:card_name]}%") if params[:card_name].present?
+    @cards = @cards.where('`set` LIKE ?', "%#{params[:set]}%") if params[:set].present?
+    @cards = @cards.where('card_type LIKE ?', "%#{params[:card_type]}%") if params[:card_type].present?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_card

@@ -3,8 +3,11 @@
 <%= render @user %>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  <% if user_signed_in? %>
+    <%= link_to "Edit this user", edit_user_path(@user) %> |
+    <%= button_to "Destroy this user", @user, method: :delete %>
+    <%= button_to "Create new card", new_card_path, method: :get %>
+  <% end %>
+  <%= link_to 'Back to Search', root_path, class: 'btn btn-secondary' %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
 </div>
