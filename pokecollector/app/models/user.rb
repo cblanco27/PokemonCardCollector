@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #creates one to many relationship with card model
-  has_many :cards
+  has_many :cards, dependent: :destroy
 
   #Validations for required attributes
   validates :first_name, presence: true 

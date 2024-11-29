@@ -6,7 +6,7 @@
     </div>
 
     <div>
-        <%= f.label :set, 'Set', class: 'form-label' %>
+        <%= f.label :set, ' Set Name ', class: 'form-label' %>
         <%= f.text_field :set %>
     </div>
 
@@ -19,6 +19,7 @@
         <%= f.submit 'Search for Card(s)' %>
     </div>
 
-    <h3>If no search terms are entered, all cards will be shown</h3>
+    <%= link_to 'Show All Cards', cards_path, class: 'btn btn-primary' %>
+
 <% end %>
 

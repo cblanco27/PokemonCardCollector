@@ -7470,3 +7470,2764 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.2ms | Allocations: 7267)
 
 
+Started GET "/cards/search?card_name=&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-21 21:12:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 36.5ms | Allocations: 10003)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 203.8ms | Allocations: 45329)
+Completed 200 OK in 598ms (Views: 185.8ms | ActiveRecord: 28.1ms | Allocations: 334062)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-21 21:12:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 2.9ms | Allocations: 220)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 9.2ms | Allocations: 3850)
+  Rendered users/index.html.erb within layouts/application (Duration: 39.5ms | Allocations: 6119)
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 8555)
+Completed 200 OK in 71ms (Views: 66.0ms | ActiveRecord: 0.6ms | Allocations: 9149)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-21 21:12:56 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1323)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 3739)
+Completed 200 OK in 41ms (Views: 28.9ms | ActiveRecord: 0.6ms | Allocations: 5127)
+
+
+Started GET "/users/1/edit" for 192.168.65.1 at 2024-11-21 21:12:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `correct_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.5ms | Allocations: 1716)
+  Rendered users/edit.html.erb within layouts/application (Duration: 17.2ms | Allocations: 2040)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 4464)
+Completed 200 OK in 55ms (Views: 39.2ms | ActiveRecord: 0.2ms | Allocations: 5912)
+
+
+Started GET "/users" for 192.168.65.1 at 2024-11-21 21:13:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.9ms | Allocations: 3216)
+  Rendered users/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 4598)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 7019)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.5ms | Allocations: 7275)
+
+
+Started GET "/cards/search?card_name=&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-21 21:13:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 14.6ms | Allocations: 798)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 4003)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.9ms | Allocations: 4253)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-21 21:13:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 1.8ms | Allocations: 275)
+  Rendered cards/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 1375)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 4403)
+Completed 200 OK in 57ms (Views: 51.7ms | ActiveRecord: 0.5ms | Allocations: 4738)
+
+
+Started GET "/cards/1" for 192.168.65.1 at 2024-11-21 21:13:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 644)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 3647)
+Completed 200 OK in 50ms (Views: 39.0ms | ActiveRecord: 0.4ms | Allocations: 4954)
+
+
+Started GET "/cards/1/edit" for 192.168.65.1 at 2024-11-21 21:13:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/edit.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 4.5ms | Allocations: 2158)
+  Rendered cards/edit.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2476)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 5486)
+Completed 200 OK in 50ms (Views: 39.5ms | ActiveRecord: 0.2ms | Allocations: 6129)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-21 21:13:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 757)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 3764)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.2ms | Allocations: 4011)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:00:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 3.6ms | Allocations: 247)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 8.8ms | Allocations: 3721)
+  Rendered users/index.html.erb within layouts/application (Duration: 83.5ms | Allocations: 17684)
+  Rendered layout layouts/application.html.erb (Duration: 298.0ms | Allocations: 43539)
+Completed 200 OK in 1125ms (Views: 285.4ms | ActiveRecord: 25.5ms | Allocations: 331269)
+
+
+Started GET "/cards/search?card_name=&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-22 22:00:56 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 19.5ms | Allocations: 7081)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 10329)
+Completed 200 OK in 62ms (Views: 44.2ms | ActiveRecord: 1.1ms | Allocations: 11930)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:00:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 3.7ms | Allocations: 276)
+  Rendered cards/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1398)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 4406)
+Completed 200 OK in 49ms (Views: 42.9ms | ActiveRecord: 1.4ms | Allocations: 4747)
+
+
+Started GET "/cards/1" for 192.168.65.1 at 2024-11-22 22:00:59 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 637)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 3639)
+Completed 200 OK in 45ms (Views: 33.0ms | ActiveRecord: 0.3ms | Allocations: 5032)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:01:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 763)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 3771)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.2ms | Allocations: 4025)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 22:01:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 3761)
+Completed 200 OK in 43ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 5061)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 22:01:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 7.2ms | Allocations: 2603)
+  Rendered cards/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 2884)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 5920)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.1ms | Allocations: 6264)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:01:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 775)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 3783)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.2ms | Allocations: 4029)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:01:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 0.9ms | Allocations: 3216)
+  Rendered users/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 4594)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 7015)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.2ms | Allocations: 7263)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 22:01:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 3522)
+Completed 200 OK in 36ms (Views: 28.5ms | ActiveRecord: 0.2ms | Allocations: 4109)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 22:01:22 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 2.3ms | Allocations: 1420)
+  Rendered cards/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1499)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 4514)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.1ms | Allocations: 4766)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-22 22:01:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"Pikachu", "card_type"=>"Electric", "card_image"=>"", "set"=>"Base", "card_price"=>"", "user_id"=>"1"}, "commit"=>"Create Card"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mCard Create (0.1ms)[0m  [1m[32mINSERT INTO "cards" ("card_name", "card_type", "card_image", "set", "card_price", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["card_name", "Pikachu"], ["card_type", "Electric"], ["card_image", ""], ["set", "Base"], ["card_price", nil], ["user_id", 1], ["created_at", "2024-11-22 22:01:33.981526"], ["updated_at", "2024-11-22 22:01:33.981526"]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/cards/2
+Completed 302 Found in 50ms (ActiveRecord: 12.8ms | Allocations: 6586)
+
+
+Started GET "/cards/2" for 192.168.65.1 at 2024-11-22 22:01:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 490)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 3493)
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 0.2ms | Allocations: 4075)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 22:01:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1100)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 3516)
+Completed 200 OK in 37ms (Views: 28.5ms | ActiveRecord: 0.6ms | Allocations: 4101)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 22:01:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 1.7ms | Allocations: 1426)
+  Rendered cards/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1505)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 4542)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 0.1ms | Allocations: 4796)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-22 22:01:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"Mewtwo", "card_type"=>"Psychic", "card_image"=>"", "set"=>"Base", "card_price"=>"", "user_id"=>"1"}, "commit"=>"Create Card"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("card_name", "card_type", "card_image", "set", "card_price", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["card_name", "Mewtwo"], ["card_type", "Psychic"], ["card_image", ""], ["set", "Base"], ["card_price", nil], ["user_id", 1], ["created_at", "2024-11-22 22:01:53.199486"], ["updated_at", "2024-11-22 22:01:53.199486"]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/cards/3
+Completed 302 Found in 39ms (ActiveRecord: 15.7ms | Allocations: 2725)
+
+
+Started GET "/cards/3" for 192.168.65.1 at 2024-11-22 22:01:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 485)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 3489)
+Completed 200 OK in 34ms (Views: 26.8ms | ActiveRecord: 0.2ms | Allocations: 4071)
+
+
+Started GET "/cards/3" for 192.168.65.1 at 2024-11-22 22:04:23 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 1.4ms | Allocations: 277)
+  Rendered cards/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1103)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 13978)
+Completed 200 OK in 97ms (Views: 56.1ms | ActiveRecord: 35.1ms | Allocations: 21732)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:04:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1295)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 4302)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.3ms | Allocations: 4635)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 22:04:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.3ms | Allocations: 194)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1633)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 4052)
+Completed 200 OK in 43ms (Views: 30.8ms | ActiveRecord: 3.1ms | Allocations: 5602)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:04:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 4.7ms | Allocations: 3562)
+  Rendered users/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 5311)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 7753)
+Completed 200 OK in 49ms (Views: 45.2ms | ActiveRecord: 0.4ms | Allocations: 8090)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:04:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1028)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 4036)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.3ms | Allocations: 4282)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:04:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.4ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 4628)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 7049)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.3ms | Allocations: 7297)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:04:45 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 2.0ms | Allocations: 204)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 3.7ms | Allocations: 3562)
+  Rendered users/index.html.erb within layouts/application (Duration: 42.7ms | Allocations: 10277)
+  Rendered layout layouts/application.html.erb (Duration: 74.7ms | Allocations: 18224)
+Completed 200 OK in 85ms (Views: 50.8ms | ActiveRecord: 28.7ms | Allocations: 20309)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:04:46 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 2.0ms | Allocations: 271)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 5396)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 8423)
+Completed 200 OK in 56ms (Views: 46.8ms | ActiveRecord: 0.5ms | Allocations: 9762)
+
+
+Started GET "/cards/1" for 192.168.65.1 at 2024-11-22 22:04:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 661)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 3684)
+Completed 200 OK in 51ms (Views: 34.9ms | ActiveRecord: 0.3ms | Allocations: 5009)
+
+
+Started GET "/cards/1/edit" for 192.168.65.1 at 2024-11-22 22:04:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/edit.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 3.2ms | Allocations: 1994)
+  Rendered cards/edit.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2311)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 5333)
+Completed 200 OK in 43ms (Views: 30.9ms | ActiveRecord: 0.2ms | Allocations: 5977)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 22:04:52 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1019)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 4027)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms | Allocations: 4273)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:04:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.3ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 4618)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 7039)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 0.2ms | Allocations: 7287)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 22:32:46 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (20.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 53ms (ActiveRecord: 38.6ms | Allocations: 2931)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 22:32:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered users/_search_form.html.erb (Duration: 1.9ms | Allocations: 3233)
+  Rendered users/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4186)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 6532)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.1ms | Allocations: 6780)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-22 22:32:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 219)
+  Rendered users/shared/_links.html.erb (Duration: 2.6ms | Allocations: 527)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 27.5ms | Allocations: 3200)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 5645)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.0ms | Allocations: 7012)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:13:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.9ms | Allocations: 558)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2011)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 9916)
+Completed 200 OK in 64ms (Views: 57.3ms | ActiveRecord: 0.0ms | Allocations: 15470)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:13:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cwhite72@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (18.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cwhite72@msudenver.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 296ms (ActiveRecord: 33.3ms | Allocations: 4364)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:13:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.1ms | Allocations: 195)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.0ms | Allocations: 3561)
+  Rendered users/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 5658)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 8185)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.2ms | Allocations: 8957)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:13:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 2.5ms | Allocations: 271)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 4954)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 7981)
+Completed 200 OK in 53ms (Views: 42.3ms | ActiveRecord: 0.2ms | Allocations: 9320)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:13:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 0.9ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 4595)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 7016)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.3ms | Allocations: 7264)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 23:28:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1365)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 3803)
+Completed 200 OK in 58ms (Views: 33.1ms | ActiveRecord: 25.4ms | Allocations: 5340)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 23:28:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 4.5ms | Allocations: 1936)
+  Rendered cards/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2209)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 5243)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.1ms | Allocations: 5566)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-22 23:28:45 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"charizard", "card_type"=>"", "card_image"=>"", "set"=>"", "card_price"=>"", "user_id"=>""}, "commit"=>"Create Card"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 3.9ms | Allocations: 2451)
+  Rendered cards/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2530)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 5540)
+Completed 422 Unprocessable Content in 32ms (Views: 27.9ms | ActiveRecord: 0.1ms | Allocations: 7340)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 23:34:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (19.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 20)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 18.9ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 3556)
+Completed 200 OK in 80ms (Views: 47.9ms | ActiveRecord: 36.4ms | Allocations: 4407)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:34:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.6ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 4642)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 7064)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.2ms | Allocations: 7312)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:38:00 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 35ms (ActiveRecord: 1.1ms | Allocations: 1896)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:38:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered users/_search_form.html.erb (Duration: 1.9ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 4076)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 6436)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.1ms | Allocations: 6685)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-22 23:38:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 211)
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1966)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 4348)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 5394)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-22 23:38:18 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"test", "last_name"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "test"], ["last_name", "test"], ["created_at", "2024-11-22 23:38:18.903181"], ["updated_at", "2024-11-22 23:38:18.903181"], ["email", "test@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (21.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 283ms (ActiveRecord: 25.3ms | Allocations: 6654)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:38:18 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.4ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 4762)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 7185)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.2ms | Allocations: 7433)
+
+
+Started GET "/users/2" for 192.168.65.1 at 2024-11-22 23:38:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 20)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 3505)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 0.4ms | Allocations: 4089)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:38:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 11ms (ActiveRecord: 0.1ms | Allocations: 1673)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:38:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_search_form.html.erb (Duration: 0.7ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4194)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 6531)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.1ms | Allocations: 6780)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:38:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 117)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 877)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 3258)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 3878)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:38:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 257ms (ActiveRecord: 1.2ms | Allocations: 2372)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:38:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.8ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 4749)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 7190)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.4ms | Allocations: 7438)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:38:45 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.5ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 1032)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 54.7ms | Allocations: 4039)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.4ms | Allocations: 4285)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:38:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 19)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.8ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 4747)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 7168)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.6ms | Allocations: 7416)
+
+
+Started GET "/cards/search?card_name=charizard&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-22 23:38:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"charizard", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE (card_name LIKE '%charizard%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (card_name LIKE '%charizard%')[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1210)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 4407)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.7ms | Allocations: 4775)
+
+
+Started GET "/users/2" for 192.168.65.1 at 2024-11-22 23:38:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1082)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 3498)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 0.5ms | Allocations: 4083)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 23:38:59 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 1.9ms | Allocations: 1423)
+  Rendered cards/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1502)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 4538)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.1ms | Allocations: 4792)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-22 23:39:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"Mew", "card_type"=>"", "card_image"=>"", "set"=>"Base", "card_price"=>"", "user_id"=>"2"}, "commit"=>"Create Card"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("card_name", "card_type", "card_image", "set", "card_price", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["card_name", "Mew"], ["card_type", ""], ["card_image", ""], ["set", "Base"], ["card_price", nil], ["user_id", 2], ["created_at", "2024-11-22 23:39:32.336297"], ["updated_at", "2024-11-22 23:39:32.336297"]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/cards/4
+Completed 302 Found in 50ms (ActiveRecord: 17.1ms | Allocations: 3713)
+
+
+Started GET "/cards/4" for 192.168.65.1 at 2024-11-22 23:39:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 705)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 3724)
+Completed 200 OK in 47ms (Views: 37.2ms | ActiveRecord: 0.2ms | Allocations: 5022)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:39:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 1157)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 4164)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.7ms | Allocations: 4410)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:39:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.7ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 4756)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 7178)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.3ms | Allocations: 7426)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:39:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1142)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 4149)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.3ms | Allocations: 4396)
+
+
+Started GET "/users/2" for 192.168.65.1 at 2024-11-22 23:42:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 20)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 3543)
+Completed 200 OK in 48ms (Views: 37.9ms | ActiveRecord: 1.0ms | Allocations: 4129)
+
+
+Started DELETE "/users/2" for 192.168.65.1 at 2024-11-22 23:42:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `correct_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mUser Destroy (5.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 6.3ms | Allocations: 3536)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:42:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.0ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 4750)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 7192)
+Completed 200 OK in 52ms (Views: 46.2ms | ActiveRecord: 3.3ms | Allocations: 7442)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:42:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 9ms (ActiveRecord: 0.1ms | Allocations: 1692)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:42:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_search_form.html.erb (Duration: 0.9ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4190)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 6527)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.1ms | Allocations: 6775)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:42:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 3229)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 3840)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:42:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cwhite72@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cwhite72@msudenver.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 244ms (ActiveRecord: 0.2ms | Allocations: 2345)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:42:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.0ms | Allocations: 3233)
+  Rendered users/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 4760)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 7185)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.1ms | Allocations: 7433)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 23:42:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 3504)
+Completed 200 OK in 38ms (Views: 31.1ms | ActiveRecord: 0.2ms | Allocations: 4089)
+
+
+Started DELETE "/users/1" for 192.168.65.1 at 2024-11-22 23:42:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `correct_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mUser Destroy (5.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.5ms | Allocations: 3350)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:42:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.3ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 4735)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 7177)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.7ms | Allocations: 7425)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 23:42:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1112)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 3549)
+Completed 200 OK in 31ms (Views: 23.9ms | ActiveRecord: 0.2ms | Allocations: 4135)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:42:46 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.4ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 4735)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 7167)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.2ms | Allocations: 7416)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:42:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1169)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 4184)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.2ms | Allocations: 4431)
+
+
+Started GET "/cards/1" for 192.168.65.1 at 2024-11-22 23:42:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 483)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 3485)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 0.2ms | Allocations: 4067)
+
+
+Started DELETE "/cards/1" for 192.168.65.1 at 2024-11-22 23:42:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+  [1m[36mCard Destroy (5.9ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/cards
+Completed 303 See Other in 30ms (ActiveRecord: 10.3ms | Allocations: 1881)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:42:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 1021)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 4029)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.2ms | Allocations: 4275)
+
+
+Started GET "/users/1" for 192.168.65.1 at 2024-11-22 23:42:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 3505)
+Completed 200 OK in 34ms (Views: 26.8ms | ActiveRecord: 0.2ms | Allocations: 4090)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:44:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 36ms (ActiveRecord: 32.9ms | Allocations: 6898)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:44:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 2.1ms | Allocations: 200)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_search_form.html.erb (Duration: 3.3ms | Allocations: 3561)
+  Rendered users/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 5239)
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 13113)
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 0.1ms | Allocations: 14319)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-22 23:45:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 213)
+  Rendered users/shared/_links.html.erb (Duration: 2.5ms | Allocations: 507)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2517)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 4962)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 6313)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-22 23:45:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Cole", "last_name"=>"White", "email"=>"cole@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (7.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cole@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Cole"], ["last_name", "White"], ["created_at", "2024-11-22 23:45:37.531915"], ["updated_at", "2024-11-22 23:45:37.531915"], ["email", "cole@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 316ms (ActiveRecord: 22.6ms | Allocations: 6263)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:45:37 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.2ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 4894)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 7361)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.3ms | Allocations: 7612)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:45:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 12ms (ActiveRecord: 0.1ms | Allocations: 1689)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:45:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_search_form.html.erb (Duration: 1.5ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 4335)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 6684)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.2ms | Allocations: 6933)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:45:41 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1217)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 3578)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.0ms | Allocations: 4499)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:45:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cole@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cole@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 249ms (ActiveRecord: 0.2ms | Allocations: 2586)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:45:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.3ms | Allocations: 3233)
+  Rendered users/index.html.erb within layouts/application (Duration: 24.2ms | Allocations: 4902)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 7327)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.1ms | Allocations: 7575)
+
+
+Started GET "/cards/search?card_name=charizard&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-22 23:45:56 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"charizard", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE (card_name LIKE '%charizard%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  Rendered cards/search.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1234)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 4465)
+Completed 200 OK in 42ms (Views: 31.2ms | ActiveRecord: 0.4ms | Allocations: 5842)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:45:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.3ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 4868)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 7310)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.4ms | Allocations: 7560)
+
+
+Started GET "/cards/search?card_name=mewtwo&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-22 23:46:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"mewtwo", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE (card_name LIKE '%mewtwo%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (card_name LIKE '%mewtwo%')[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4177)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 7403)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.5ms | Allocations: 7679)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:46:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.7ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 4864)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 7285)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.2ms | Allocations: 7533)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:46:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 1.5ms | Allocations: 264)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1670)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 4677)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.2ms | Allocations: 5009)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:46:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.2ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 4879)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 7300)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.3ms | Allocations: 7548)
+
+
+Started GET "/users/3" for 192.168.65.1 at 2024-11-22 23:46:09 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1344)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 3761)
+Completed 200 OK in 43ms (Views: 32.1ms | ActiveRecord: 0.2ms | Allocations: 5060)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 23:46:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 4.0ms | Allocations: 1941)
+  Rendered cards/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2216)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 5252)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.1ms | Allocations: 5576)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-22 23:46:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"Raichu", "card_type"=>"", "card_image"=>"", "set"=>"Base", "card_price"=>"", "user_id"=>"3"}, "commit"=>"Create Card"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("card_name", "card_type", "card_image", "set", "card_price", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["card_name", "Raichu"], ["card_type", ""], ["card_image", ""], ["set", "Base"], ["card_price", nil], ["user_id", 3], ["created_at", "2024-11-22 23:46:32.516401"], ["updated_at", "2024-11-22 23:46:32.516401"]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/cards/5
+Completed 302 Found in 51ms (ActiveRecord: 15.7ms | Allocations: 4291)
+
+
+Started GET "/cards/5" for 192.168.65.1 at 2024-11-22 23:46:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 680)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 3698)
+Completed 200 OK in 43ms (Views: 33.3ms | ActiveRecord: 0.5ms | Allocations: 4996)
+
+
+Started GET "/cards/5/edit" for 192.168.65.1 at 2024-11-22 23:46:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/edit.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 3.0ms | Allocations: 1449)
+  Rendered cards/edit.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1702)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 4712)
+Completed 200 OK in 42ms (Views: 32.3ms | ActiveRecord: 0.2ms | Allocations: 5354)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:46:36 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 1151)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 4158)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.2ms | Allocations: 4404)
+
+
+Started GET "/cards/5" for 192.168.65.1 at 2024-11-22 23:46:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 474)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 3476)
+Completed 200 OK in 43ms (Views: 31.8ms | ActiveRecord: 0.2ms | Allocations: 4058)
+
+
+Started DELETE "/cards/5" for 192.168.65.1 at 2024-11-22 23:46:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+  [1m[36mCard Destroy (5.6ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/cards
+Completed 303 See Other in 33ms (ActiveRecord: 9.0ms | Allocations: 1872)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:46:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1075)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 4104)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms | Allocations: 4352)
+
+
+Started GET "/users/3" for 192.168.65.1 at 2024-11-22 23:46:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 3519)
+Completed 200 OK in 40ms (Views: 31.5ms | ActiveRecord: 0.2ms | Allocations: 4103)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:46:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.8ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 4886)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 7310)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.2ms | Allocations: 7559)
+
+
+Started GET "/cards/search?card_name=mew&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-22 23:46:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"mew", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE (card_name LIKE '%mew%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (card_name LIKE '%mew%')[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 15.2ms | Allocations: 860)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 4074)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.5ms | Allocations: 4349)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:46:59 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.8ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 23.5ms | Allocations: 4861)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 7282)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.2ms | Allocations: 7530)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:48:36 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 31ms (ActiveRecord: 0.7ms | Allocations: 1706)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:48:36 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_search_form.html.erb (Duration: 2.6ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 4310)
+  Rendered layout layouts/application.html.erb (Duration: 60.3ms | Allocations: 6668)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.2ms | Allocations: 6917)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-22 23:48:58 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1236)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 3605)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 4193)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-22 23:49:18 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Gina", "last_name"=>"White", "email"=>"gina@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gina@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Gina"], ["last_name", "White"], ["created_at", "2024-11-22 23:49:18.439127"], ["updated_at", "2024-11-22 23:49:18.439127"], ["email", "gina@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 280ms (ActiveRecord: 14.1ms | Allocations: 5506)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:49:18 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.8ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 5026)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 7449)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 0.2ms | Allocations: 7697)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2024-11-22 23:49:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 11ms (ActiveRecord: 0.1ms | Allocations: 1682)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:49:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_search_form.html.erb (Duration: 1.9ms | Allocations: 3235)
+  Rendered users/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 4451)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 6788)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.1ms | Allocations: 7036)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:49:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 3229)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 3858)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2024-11-22 23:49:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"gina@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "gina@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 250ms (ActiveRecord: 0.1ms | Allocations: 2326)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:49:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.3ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 5001)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 7447)
+Completed 200 OK in 50ms (Views: 46.0ms | ActiveRecord: 1.2ms | Allocations: 7696)
+
+
+Started GET "/cards/search?card_name=mew&set=&card_type=&commit=Search+for+Card%28s%29" for 192.168.65.1 at 2024-11-22 23:49:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#search as HTML
+  Parameters: {"card_name"=>"mew", "set"=>"", "card_type"=>"", "commit"=>"Search for Card(s)"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/search.html.erb within layouts/application
+  [1m[36mCard Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE (card_name LIKE '%mew%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/cards/search.html.erb:3
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (card_name LIKE '%mew%')[0m
+  ↳ app/views/cards/search.html.erb:5
+  Rendered cards/search.html.erb within layouts/application (Duration: 12.3ms | Allocations: 860)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 4068)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.5ms | Allocations: 4344)
+
+
+Started GET "/users/4" for 192.168.65.1 at 2024-11-22 23:49:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 3505)
+Completed 200 OK in 37ms (Views: 27.6ms | ActiveRecord: 0.3ms | Allocations: 4089)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-22 23:49:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 2.7ms | Allocations: 1435)
+  Rendered cards/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1514)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 4529)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.1ms | Allocations: 4781)
+
+
+Started POST "/cards" for 192.168.65.1 at 2024-11-22 23:50:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"charmander", "card_type"=>"", "card_image"=>"", "set"=>"base", "card_price"=>"", "user_id"=>"4"}, "commit"=>"Create Card"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("card_name", "card_type", "card_image", "set", "card_price", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["card_name", "charmander"], ["card_type", ""], ["card_image", ""], ["set", "base"], ["card_price", nil], ["user_id", 4], ["created_at", "2024-11-22 23:50:11.118377"], ["updated_at", "2024-11-22 23:50:11.118377"]]
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/cards/6
+Completed 302 Found in 44ms (ActiveRecord: 13.9ms | Allocations: 2707)
+
+
+Started GET "/cards/6" for 192.168.65.1 at 2024-11-22 23:50:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 512)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 3536)
+Completed 200 OK in 42ms (Views: 31.8ms | ActiveRecord: 0.2ms | Allocations: 4120)
+
+
+Started GET "/cards/6/edit" for 192.168.65.1 at 2024-11-22 23:50:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/edit.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 3.2ms | Allocations: 1451)
+  Rendered cards/edit.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1555)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 4581)
+Completed 200 OK in 49ms (Views: 36.3ms | ActiveRecord: 0.2ms | Allocations: 5163)
+
+
+Started PATCH "/cards/6" for 192.168.65.1 at 2024-11-22 23:50:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"card_name"=>"charmander", "card_type"=>"fire", "card_image"=>"", "set"=>"base", "card_price"=>"", "user_id"=>"4"}, "commit"=>"Update Card", "id"=>"6"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:40:in `block in update'
+  [1m[36mCard Update (6.5ms)[0m  [1m[33mUPDATE "cards" SET "card_type" = ?, "updated_at" = ? WHERE "cards"."id" = ?[0m  [["card_type", "fire"], ["updated_at", "2024-11-22 23:50:15.967657"], ["id", 6]]
+  ↳ app/controllers/cards_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/cards/6
+Completed 302 Found in 37ms (ActiveRecord: 10.4ms | Allocations: 2417)
+
+
+Started GET "/cards/6" for 192.168.65.1 at 2024-11-22 23:50:16 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 500)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 3508)
+Completed 200 OK in 37ms (Views: 30.3ms | ActiveRecord: 0.6ms | Allocations: 4091)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:50:19 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 1148)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 4156)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.2ms | Allocations: 4402)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-22 23:50:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.4ms | Allocations: 3236)
+  Rendered users/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 5011)
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | Allocations: 7432)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 0.2ms | Allocations: 7680)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:50:22 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.5ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 1169)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 4176)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.2ms | Allocations: 4422)
+
+
+Started GET "/cards/6" for 192.168.65.1 at 2024-11-22 23:50:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 465)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 3488)
+Completed 200 OK in 40ms (Views: 31.2ms | ActiveRecord: 0.2ms | Allocations: 4072)
+
+
+Started DELETE "/cards/6" for 192.168.65.1 at 2024-11-22 23:50:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+  [1m[36mCard Destroy (6.4ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/cards
+Completed 303 See Other in 40ms (ActiveRecord: 13.1ms | Allocations: 1872)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-22 23:50:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:6
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered cards/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1030)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 4059)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.2ms | Allocations: 4306)
+
+
+Started GET "/users/4" for 192.168.65.1 at 2024-11-22 23:50:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1112)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 3528)
+Completed 200 OK in 36ms (Views: 29.2ms | ActiveRecord: 0.3ms | Allocations: 4113)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:06:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 2.0ms | Allocations: 247)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 9.9ms | Allocations: 3766)
+  Rendered users/index.html.erb within layouts/application (Duration: 80.1ms | Allocations: 18117)
+  Rendered layout layouts/application.html.erb (Duration: 277.4ms | Allocations: 43954)
+Completed 200 OK in 1085ms (Views: 268.7ms | ActiveRecord: 23.6ms | Allocations: 331692)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:07:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.4ms | Allocations: 204)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 4.4ms | Allocations: 3525)
+  Rendered users/index.html.erb within layouts/application (Duration: 55.8ms | Allocations: 10578)
+  Rendered layout layouts/application.html.erb (Duration: 89.4ms | Allocations: 18479)
+Completed 200 OK in 100ms (Views: 62.6ms | ActiveRecord: 32.3ms | Allocations: 20564)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:07:23 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.6ms | Allocations: 204)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 3.8ms | Allocations: 3564)
+  Rendered users/index.html.erb within layouts/application (Duration: 50.6ms | Allocations: 10610)
+  Rendered layout layouts/application.html.erb (Duration: 94.7ms | Allocations: 18529)
+Completed 200 OK in 106ms (Views: 72.7ms | ActiveRecord: 26.5ms | Allocations: 20614)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:07:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.4ms | Allocations: 204)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 3.5ms | Allocations: 3565)
+  Rendered users/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 10668)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 18574)
+Completed 200 OK in 99ms (Views: 61.5ms | ActiveRecord: 29.8ms | Allocations: 20661)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:07:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.6ms | Allocations: 204)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.3ms | Allocations: 3525)
+  Rendered users/index.html.erb within layouts/application (Duration: 47.2ms | Allocations: 10556)
+  Rendered layout layouts/application.html.erb (Duration: 76.3ms | Allocations: 18457)
+Completed 200 OK in 88ms (Views: 50.1ms | ActiveRecord: 31.6ms | Allocations: 20541)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:12:09 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 2.2ms | Allocations: 204)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 3.9ms | Allocations: 3525)
+  Rendered users/index.html.erb within layouts/application (Duration: 87.3ms | Allocations: 10602)
+  Rendered layout layouts/application.html.erb (Duration: 122.8ms | Allocations: 18570)
+Completed 200 OK in 134ms (Views: 80.5ms | ActiveRecord: 46.9ms | Allocations: 20657)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:12:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 8376)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 8467)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.7ms | Allocations: 10075)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `student' for #<ActionView::Base:0x00000000027100>):
+    22:         <td><%= card.card_type %></td>
+    23:         <td>
+    24:           <div class="d-flex flex-row justify-content-center"> <!-- creates buttons to show, edit and delete student paths -->
+    25:             <%= link_to 'Show', card_path(student), class: "btn btn-primary btn-sm m-1", aria: { label: "Show details for #{card.card_name}" }%>
+    26:             <%= link_to 'Edit', edit_card_path(student), class: "btn btn-secondary btn-sm m-1", aria: { label: "Edit details of #{card.card_name}" }%>
+    27:             <%= button_to 'Delete', card_path(student), method: :delete, class: "btn btn-danger btn-sm m-1", aria: { label: "Delete card #{card.card_name} #{card.card_type}" }%>
+    28:           </div>
+  
+app/views/cards/index.html.erb:25
+app/views/cards/index.html.erb:18
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:12:31 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 2.5ms | Allocations: 276)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 6672)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 88.2ms | Allocations: 19594)
+Completed 200 OK in 107ms (Views: 65.5ms | ActiveRecord: 29.1ms | Allocations: 22301)
+
+
+Started GET "/cards/2/edit" for 192.168.65.1 at 2024-11-29 19:12:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:73:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/edit.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 6.3ms | Allocations: 2648)
+  Rendered cards/edit.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2974)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 5984)
+Completed 200 OK in 51ms (Views: 36.2ms | ActiveRecord: 0.3ms | Allocations: 7355)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:13:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 1.4ms | Allocations: 264)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 33.9ms | Allocations: 6570)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 69.5ms | Allocations: 19404)
+Completed 200 OK in 85ms (Views: 47.3ms | ActiveRecord: 28.1ms | Allocations: 22111)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:13:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.7ms | Allocations: 194)
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.5ms | Allocations: 3560)
+  Rendered users/index.html.erb within layouts/application (Duration: 29.8ms | Allocations: 5976)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 8413)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 0.2ms | Allocations: 8997)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:13:16 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 1586)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 4613)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.2ms | Allocations: 4860)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:14:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 1.8ms | Allocations: 264)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 34.1ms | Allocations: 6629)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 73.8ms | Allocations: 19524)
+Completed 200 OK in 90ms (Views: 53.9ms | ActiveRecord: 26.2ms | Allocations: 22231)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:15:31 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  Rendered cards/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1490)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 1596)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 4339)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+<div class='m-2 w-25'>
+
+<h1>Cards</h1>
+
+<!-- creates a table to present cards -->
+<%if @cards.present?%>
+<table class="table table-bordered table-striped" aria-label="List of students and their information"> 
+<caption class="visually-hidden">Table listing students' first names, last names, majors, and graduation dates, along with action buttons for each student.</caption>
+  <thead>
+    <tr> <!-- creates the headings for the table head -->
+      <th scope="col">Card Name</th>
+      <th scope="col">Set Name</th>
+      <th scope="col">Card Type</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <%@cards.each do |card|%>
+      <tr> <!-- iterates through the search results (collection of objects) to allow information to be put into the table -->
+        <td><%= card.card_name %></td>
+        <td><%= card.set %></td>
+        <td><%= card.card_type %></td>
+        <td>
+          <div class="d-flex flex-row justify-content-center"> <!-- creates buttons to show, edit and delete card paths -->
+            <%= link_to 'Show', card_path(card), class: "btn btn-primary btn-sm m-1", aria: { label: "Show details for #{card.card_name}" }%>
+            <%= link_to 'Edit', edit_card_path(card), class: "btn btn-secondary btn-sm m-1", aria: { label: "Edit details of #{card.card_name}" }%>
+            <%= button_to 'Delete', card_path(card), method: :delete, class: "btn btn-danger btn-sm m-1", aria: { label: "Delete card #{card.card_name} #{card.card_type}" }%>
+          </div>
+        </td>
+
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+<%end%>
+<!-->
+<div id="cards">
+  <% @cards.each do |card| %>
+    <%= render card %>
+    <p>
+      <%= link_to "Show this card", card %>
+    </p>
+  <% end %>
+</div>  -->
+
+<%= link_to "New card", new_card_path, class: 'btn btn-secondary %>
+<%= link_to 'Back to Search', root_path, class: 'btn btn-secondary' %>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    <div class='m-2 w-25'>
+3:    
+4:    <h1>Cards</h1>
+5:    
+6:    <!-- creates a table to present cards -->
+7:    <%if @cards.present?%>
+8:    <table class="table table-bordered table-striped" aria-label="List of students and their information"> 
+9:    <caption class="visually-hidden">Table listing students' first names, last names, majors, and graduation dates, along with action buttons for each student.</caption>
+10:      <thead>
+11:        <tr> <!-- creates the headings for the table head -->
+12:          <th scope="col">Card Name</th>
+13:          <th scope="col">Set Name</th>
+14:          <th scope="col">Card Type</th>
+15:        </tr>
+16:      </thead>
+17:      <tbody> 
+18:        <%@cards.each do |card|%>
+19:          <tr> <!-- iterates through the search results (collection of objects) to allow information to be put into the table -->
+20:            <td><%= card.card_name %></td>
+21:            <td><%= card.set %></td>
+22:            <td><%= card.card_type %></td>
+23:            <td>
+24:              <div class="d-flex flex-row justify-content-center"> <!-- creates buttons to show, edit and delete card paths -->
+25:                <%= link_to 'Show', card_path(card), class: "btn btn-primary btn-sm m-1", aria: { label: "Show details for #{card.card_name}" }%>
+26:                <%= link_to 'Edit', edit_card_path(card), class: "btn btn-secondary btn-sm m-1", aria: { label: "Edit details of #{card.card_name}" }%>
+27:                <%= button_to 'Delete', card_path(card), method: :delete, class: "btn btn-danger btn-sm m-1", aria: { label: "Delete card #{card.card_name} #{card.card_type}" }%>
+28:              </div>
+29:            </td>
+30:    
+31:          </tr>
+32:        <%end%>
+33:      </tbody>
+34:    </table>
+35:    <%end%>
+36:    <!-->
+37:    <div id="cards">
+38:      <% @cards.each do |card| %>
+39:        <%= render card %>
+40:        <p>
+41:          <%= link_to "Show this card", card %>
+42:        </p>
+43:      <% end %>
+44:    </div>  -->
+45:    
+46:    <%= link_to "New card", new_card_path, class: 'btn btn-secondary %>
+47:    <%= link_to 'Back to Search', root_path, class: 'btn btn-secondary' %>
+  
+app/views/cards/index.html.erb:47: syntax error, unexpected constant, expecting ')'
+app/views/cards/index.html.erb:50: unterminated string meets end of file
+app/views/cards/index.html.erb:50: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:15:52 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 2.6ms | Allocations: 264)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 6635)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 74.9ms | Allocations: 19536)
+Completed 200 OK in 91ms (Views: 52.3ms | ActiveRecord: 29.0ms | Allocations: 22242)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:15:56 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 1.5ms | Allocations: 194)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 2.7ms | Allocations: 3560)
+  Rendered users/index.html.erb within layouts/application (Duration: 33.1ms | Allocations: 5982)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 8418)
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 0.2ms | Allocations: 9003)
+
+
+Started GET "/users/4" for 192.168.65.1 at 2024-11-29 19:15:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1320)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 3750)
+Completed 200 OK in 43ms (Views: 29.1ms | ActiveRecord: 0.2ms | Allocations: 5052)
+
+
+Started DELETE "/users/4" for 192.168.65.1 at 2024-11-29 19:16:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `set_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `correct_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mCard Load (3.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:53:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 303 See Other in 70ms (ActiveRecord: 15.4ms | Allocations: 7947)
+
+
+Started GET "/users" for 192.168.65.1 at 2024-11-29 19:16:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 0.7ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 4982)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 7321)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.6ms | Allocations: 7569)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2024-11-29 19:16:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 2.4ms | Allocations: 219)
+  Rendered users/shared/_links.html.erb (Duration: 2.2ms | Allocations: 527)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 23.2ms | Allocations: 3207)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 5652)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 7165)
+
+
+Started POST "/users" for 192.168.65.1 at 2024-11-29 19:16:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Divana", "last_name"=>"Ball", "email"=>"dball@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dball@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Divana"], ["last_name", "Ball"], ["created_at", "2024-11-29 19:16:20.940401"], ["updated_at", "2024-11-29 19:16:20.940401"], ["email", "dball@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 276ms (ActiveRecord: 12.1ms | Allocations: 8389)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-29 19:16:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 19)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_search_form.html.erb (Duration: 1.4ms | Allocations: 3234)
+  Rendered users/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 5009)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 7452)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.1ms | Allocations: 7702)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:16:23 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1558)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 4564)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.2ms | Allocations: 4810)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:18:15 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 1.7ms | Allocations: 264)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 6619)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 81.3ms | Allocations: 19508)
+Completed 200 OK in 96ms (Views: 53.0ms | ActiveRecord: 34.6ms | Allocations: 22216)
+
+
+Started GET "/cards" for 192.168.65.1 at 2024-11-29 19:18:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:7
+  Rendered cards/_card.html.erb (Duration: 2.3ms | Allocations: 264)
+  Rendered cards/_card.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered cards/_card.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered cards/index.html.erb within layouts/application (Duration: 40.9ms | Allocations: 6609)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 84.9ms | Allocations: 19510)
+Completed 200 OK in 101ms (Views: 55.6ms | ActiveRecord: 34.6ms | Allocations: 22217)
+
+
+Started GET "/cards/new" for 192.168.65.1 at 2024-11-29 19:18:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/_form.html.erb (Duration: 4.0ms | Allocations: 1972)
+  Rendered cards/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2248)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 5263)
+Completed 200 OK in 55ms (Views: 50.1ms | ActiveRecord: 0.1ms | Allocations: 5587)
+
+
