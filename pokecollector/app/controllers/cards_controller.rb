@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /cards or /cards.json
   def index
@@ -21,16 +22,11 @@ class CardsController < ApplicationController
 
   # POST /cards or /cards.json
   def create
-    @card = Card.new(card_params)
-
-    respond_to do |format|
-      if @card.save
-        format.html { redirect_to @card, notice: "Card was successfully created." }
-        format.json { render :show, status: :created, location: @card }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @card.errors, status: :unprocessable_entity }
-      end
+    @card = current_user.cards.build(card_params) # Automatically assign the user
+    if @card.save
+      redirect_to @card, notice: "Card was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
