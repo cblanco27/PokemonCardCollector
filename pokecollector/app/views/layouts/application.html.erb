@@ -42,13 +42,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <% if user_signed_in? %>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-      <%= button_to 'Account', user_path(current_user), method: :get %>
-    <% else %>
-      <%= link_to 'Sign In', new_user_session_path %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-    <% end %>
+<% if user_signed_in? %>
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-danger m-1' %>
+  <%= button_to 'Account', user_path(current_user), method: :get, class: 'btn btn-primary m-1' %>
+<% else %>
+  <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary m-1' %>
+  <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-success m-1' %>
+<% end %>
+
 
     <%= yield %>
   </body>

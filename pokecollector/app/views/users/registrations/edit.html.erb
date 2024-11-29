@@ -43,7 +43,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: 'btn btn-secondary m-1' %>
   </div>
 <% end %>
 <!-- 
@@ -51,4 +51,5 @@
 
 <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 -->
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: 'btn btn-secondary m-1' %>
+
