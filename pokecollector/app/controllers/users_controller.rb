@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    @user = User.find(params[:id]) # Find user by ID from URL
+    @cards = @user.cards           # Fetch cards owned by this user
   end
 
   # GET /users/new

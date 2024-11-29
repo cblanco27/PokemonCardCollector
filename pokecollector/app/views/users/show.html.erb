@@ -3,11 +3,47 @@
 <%= render @user %>
 
 <div>
+  <div>
   <% if user_signed_in? %>
-    <%= link_to "Edit this user", edit_user_path(@user) %> |
-    <%= button_to "Destroy this user", @user, method: :delete %>
-    <%= button_to "Create new card", new_card_path, method: :get %>
+    <%= link_to "Edit your profile", edit_user_registration_path, class: 'btn btn-primary' %> 
+    <%= button_to "Destroy this user", @user, method: :delete, class: 'btn btn-danger' %>
+    <%= button_to "Create new card", new_card_path, method: :get, class: 'btn btn-success' %>
   <% end %>
+</div>
+
   <%= link_to 'Back to Search', root_path, class: 'btn btn-secondary' %>
 
 </div>
+
+<h2>Owned Cards</h2>
+<% if @cards.any? %>
+<table class="table table-bordered table-striped" aria-label="List of students and their information">
+  <caption class="visually-hidden">Table listing cards' name, type, and set.</caption>
+  <thead>
+    <tr> <!-- creates the headings for the table head -->
+      <th scope="col">Card Name</th>
+      <th scope="col">Set Name</th>
+      <th scope="col">Card Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cards.each do |card| %>
+    <tr> <!-- iterates through the search results (collection of objects) to allow information to be put into the table -->
+      <td><%= card.card_name %></td>
+      <td><%= card.set %></td>
+      <td><%= card.card_type %></td>
+      <td>
+        <div class="d-flex flex-row justify-content-center"> <!-- creates buttons to show, edit and delete card paths -->
+          <%= link_to 'Show', card_path(card), class: "btn btn-primary btn-sm m-1", aria: { label: "Show details for #{card.card_name}" } %>
+          <%= link_to 'Edit', edit_card_path(card), class: "btn btn-secondary btn-sm m-1", aria: { label: "Edit details of #{card.card_name}" } %>
+          <%= button_to 'Delete', card_path(card), method: :delete, class: "btn btn-danger btn-sm m-1", aria: { label: "Delete card #{card.card_name} #{card.card_type}" } %>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <p>No cards found.</p>
+<% end %>
+
