@@ -1,0 +1,19 @@
+<h2>Search Results</h2>
+
+<% if @cards.any? %>
+  <ul>
+    <% @cards.each do |card| %>
+      <li>
+        <strong>Name:</strong> <%= card.card_name %>,
+        <strong>Set:</strong> <%= card.set %>,
+        <strong>Type:</strong> <%= card.card_type %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No cards found matching your search criteria.</p>
+<% end %>
+
+<%= link_to 'Show All Cards', cards_path, class: 'btn btn-primary' %>
+
+<%= link_to 'Back to Search', root_path, class: 'btn btn-secondary' %>
