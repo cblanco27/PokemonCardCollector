@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:search]
 
   # GET /cards or /cards.json
   def index
@@ -21,7 +21,7 @@ class CardsController < ApplicationController
   end
 
   # POST /cards or /cards.json
-  def create
+  def create #changed to automatically assign the User ID when creating cards, so I removed the User portion from the form
     @card = current_user.cards.build(card_params) # Automatically assign the user
     if @card.save
       redirect_to @card, notice: "Card was successfully created."
