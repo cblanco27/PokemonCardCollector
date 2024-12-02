@@ -1,0 +1,112 @@
+<html><head>
+    <title>Pokecollector</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    
+
+    <link rel="stylesheet" href="/assets/application-9cc10160a6d7db46488ea247e22a0640a646d707aae641b477f145b86f11550b.css" data-turbo-track="reload">
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-9d8af3e5a987264d9dfcebe8ee05014b200da71fec97dd355274bd9fdaaa1e0a.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-4cfe7c6aaeb9120821760aa53763dff54fbc561e500da6482fc43c54c7384929.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-9d8af3e5a987264d9dfcebe8ee05014b200da71fec97dd355274bd9fdaaa1e0a.js">
+<link rel="modulepreload" href="/assets/turbo.min-4cfe7c6aaeb9120821760aa53763dff54fbc561e500da6482fc43c54c7384929.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+<script type="module">import "application"</script>
+  </head>
+
+<body><div class="bg-primary text-white text-center py-3">
+  <h1>Pokemon Card Collector</h1>
+</div>
+
+
+   <!-- Include Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer=""></script>
+    <link rel="stylesheet" href="/assets/application-9cc10160a6d7db46488ea247e22a0640a646d707aae641b477f145b86f11550b.css" media="all" data-turbo-track="reload">
+    <script src="/assets/application-9d8af3e5a987264d9dfcebe8ee05014b200da71fec97dd355274bd9fdaaa1e0a.js" type="module" data-turbo-track="reload" defer="defer"></script>
+   <!-- Custom Styles -->
+
+  
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark bg-primary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Sign In</a></li>
+                <li><a class="dropdown-item" href="#">Sign Up</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    <p class="notice"></p>
+    <p class="alert"></p>
+<div class="d-flex gap-2">
+    <a class="btn btn-outline-primary m-1" href="/users/sign_in">Sign In</a>
+    <a class="btn btn-outline-success m-1" href="/users/sign_up">Sign Up</a>
+</div>
+
+    <h2>Sign up</h2>
+
+<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post">
+  
+
+   <div>
+    <label style="display: block" for="user_first_name">First name</label>
+    <input type="text" name="user[first_name]" id="user_first_name">
+  </div>
+
+  <div>
+    <label style="display: block" for="user_last_name">Last name</label>
+    <input type="text" name="user[last_name]" id="user_last_name">
+  </div>
+
+  <div class="field">
+    <label for="user_email">Email</label><br>
+    <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+  </div>
+
+  <div class="field">
+    <label for="user_password">Password</label>
+    <em>(6 characters minimum)</em>
+    <br>
+    <input autocomplete="new-password" type="password" name="user[password]" id="user_password">
+  </div>
+
+  <div class="field">
+    <label for="user_password_confirmation">Password confirmation</label><br>
+    <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Sign up" class="btn btn-primary m-1" data-disable-with="Sign up">
+  </div>
+</form>
+  <a href="/users/sign_in">Log in</a><br>
+
+
+
+
+
+
+
+  
+
+</body></html>
