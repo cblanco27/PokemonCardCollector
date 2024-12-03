@@ -55,12 +55,25 @@ class CardsController < ApplicationController
 
   def search
     @cards = Card.all
+    # @current_user = User.find_by(params[:id])
+    #creates instance variables
+    @name = params[:card_name]
+    @set = params[:set]
+    @type = params[:card_type]
+    
+    # :: tells rails to look for this class in entire directory, was running into error without it. 
+    @returned_cards = ::TcgApiService.new.search_card(@name, @set, @type)
+
 
     # `LIKE` is a case insensitve search operator. allows for 'pikachu', 'PIKACHU', and 'pIkAcHu' to all find the same card in the DB of 'Pikachu'
     # `%#{params[:x]}%` allow for partial string matching. if params[:card_name] == 'pika', the query would pull every card that contained 'Pika' in it
     @cards = @cards.where('card_name LIKE ?', "%#{params[:card_name]}%") if params[:card_name].present?
     @cards = @cards.where('`set` LIKE ?', "%#{params[:set]}%") if params[:set].present?
     @cards = @cards.where('card_type LIKE ?', "%#{params[:card_type]}%") if params[:card_type].present?
+
+    #changes active record collection to a generic ruby array, that contains active record objects, adds OpenStruct objects to end of array. 
+    @cards = @cards.to_a + @returned_cards
+
   end
 
   private

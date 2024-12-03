@@ -12,6 +12,7 @@ RSpec.describe "Users", type: :system do
 
     click_button 'Sign up'
     expect(page).to have_content('Welcome! You have signed up successfully.')
+    #check to make sure information is passed through, used email since emails must be unique
     expect(User.last.email).to eq('testemail@email.com')
   end
   
@@ -41,22 +42,23 @@ RSpec.describe "Users", type: :system do
     expect(page).to have_content('Log in')
     click_button 'Log in'
     
-
+    #makes sure I am in the correct path
     visit user_path(@user.id)
     expect(page).to have_content("First name: #{@user.first_name}")
     
 
     click_link_or_button 'Create new card'
     expect(current_path).to eq(new_card_path)
-
+    #create card with only required validations, should auto-assign user
     fill_in 'Card name', with: 'Mewtwo'
     fill_in 'Set', with: 'base'
     click_link_or_button 'Create Card'
+    #check for new page to have name of card and correct user id
     expect(page).to have_content("Card name: Mewtwo")
     expect(page).to have_content("User: #{@user.id}")
   end
 
-  it 'card creation - happy' do
+  it 'card creation - sad' do
     #must be a user to create a card
     @user = User.create!(first_name: 'Test', last_name: 'User', email: 'testEmail@email.com', password: '123456', password_confirmation: '123456')
     visit root_path
@@ -66,17 +68,19 @@ RSpec.describe "Users", type: :system do
     expect(page).to have_content('Log in')
     click_button 'Log in'
     
-
+    #makes sure I am in the correct path
     visit user_path(@user.id)
     expect(page).to have_content("First name: #{@user.first_name}")
     
 
     click_link_or_button 'Create new card'
+    #checks pathing
     expect(current_path).to eq(new_card_path)
 
     fill_in 'Card name', with: 'Mewtwo'
     fill_in 'Set', with: ''
     click_link_or_button 'Create Card'
+    #expected error message " " used for contractions
     expect(page).to have_content "Set can't be blank"
   end
 end
