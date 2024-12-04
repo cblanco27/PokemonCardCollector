@@ -1,17 +1,35 @@
+<div class='w-75'>
 <h2>Search Results</h2>
 
 <% if @cards.any? %>
-  <ul>
+<table class="table table-bordered table-striped" aria-label="List of students and their information">
+  <caption class="visually-hidden">Table listing cards' name, type, and set.</caption>
+  <thead>
+    <tr> <!-- creates the headings for the table head -->
+      <th scope="col">Card Name</th>
+      <th scope="col">Set Name</th>
+      <th scope="col">Card Type</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @cards.each do |card| %>
-      <li>
-        <strong>Name:</strong> <%= card.card_name %>,
-        <strong>Set:</strong> <%= card.set %>,
-        <strong>Type:</strong> <%= card.card_type %>
-      </li>
+    <tr> <!-- iterates through the search results (collection of objects) to allow information to be put into the table -->
+      <td><%= card.card_name %></td>
+      <td><%= card.set %></td>
+      <td><%= card.card_type %></td>
+      <td>
+        <div class="d-flex flex-row justify-content-center"> <!-- creates buttons to show, edit and delete card paths -->
+          <%= link_to 'Show', card_path(card), class: "btn btn-primary btn-sm m-1", aria: { label: "Show details for #{card.card_name}" } %>
+          <%= link_to 'Edit', edit_card_path(card), class: "btn btn-secondary btn-sm m-1", aria: { label: "Edit details of #{card.card_name}" } %>
+          <%= button_to 'Delete', card_path(card), method: :delete, class: "btn btn-danger btn-sm m-1", aria: { label: "Delete card #{card.card_name} #{card.card_type}" } %>
+        </div>
+      </td>
+    </tr>
     <% end %>
-  </ul>
+  </tbody>
+</table>
 <% else %>
-  <p>No cards found matching your search criteria.</p>
+  <p>No cards found.</p>
 <% end %>
 
 <%= link_to 'Show All Cards', cards_path, class: 'btn btn-primary' %>

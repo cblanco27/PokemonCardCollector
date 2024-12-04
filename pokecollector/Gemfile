@@ -79,3 +79,6 @@ gem "devise", "~> 4.9"
 
 gem "bootstrap"
 gem "sassc-rails"
+
+#HTTPS request gem for API use
+gem "faraday"

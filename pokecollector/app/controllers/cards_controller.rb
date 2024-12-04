@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:search]
 
   # GET /cards or /cards.json
   def index
@@ -20,17 +21,12 @@ class CardsController < ApplicationController
   end
 
   # POST /cards or /cards.json
-  def create
-    @card = Card.new(card_params)
-
-    respond_to do |format|
-      if @card.save
-        format.html { redirect_to @card, notice: "Card was successfully created." }
-        format.json { render :show, status: :created, location: @card }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @card.errors, status: :unprocessable_entity }
-      end
+  def create #changed to automatically assign the User ID when creating cards, so I removed the User portion from the form
+    @card = current_user.cards.build(card_params) # Automatically assign the user
+    if @card.save
+      redirect_to @card, notice: "Card was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -59,12 +55,25 @@ class CardsController < ApplicationController
 
   def search
     @cards = Card.all
+    # @current_user = User.find_by(params[:id])
+    #creates instance variables
+    @name = params[:card_name]
+    @set = params[:set]
+    @type = params[:card_type]
+    
+    # :: tells rails to look for this class in entire directory, was running into error without it. 
+    @returned_cards = ::TcgApiService.new.search_card(@name, @set, @type)
+
 
     # `LIKE` is a case insensitve search operator. allows for 'pikachu', 'PIKACHU', and 'pIkAcHu' to all find the same card in the DB of 'Pikachu'
     # `%#{params[:x]}%` allow for partial string matching. if params[:card_name] == 'pika', the query would pull every card that contained 'Pika' in it
     @cards = @cards.where('card_name LIKE ?', "%#{params[:card_name]}%") if params[:card_name].present?
     @cards = @cards.where('`set` LIKE ?', "%#{params[:set]}%") if params[:set].present?
     @cards = @cards.where('card_type LIKE ?', "%#{params[:card_type]}%") if params[:card_type].present?
+
+    #changes active record collection to a generic ruby array, that contains active record objects, adds OpenStruct objects to end of array. 
+    @cards = @cards.to_a + @returned_cards
+
   end
 
   private

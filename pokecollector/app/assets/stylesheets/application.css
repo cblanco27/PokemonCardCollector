@@ -13,4 +13,7 @@
 *= require_tree .
 *= require_self
 */
-
+.btn-fixed {
+    width: 125px; /* Adjust this value to your desired button size */
+  }
+  
